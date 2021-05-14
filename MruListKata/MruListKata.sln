@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MruListKata.Tests", "MruListKata.Tests\MruListKata.Tests.csproj", "{A0E4AAFD-2EA7-4817-B9D3-FFF98626F267}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MruListKata", "MruListKata\MruListKata.csproj", "{D4C1C271-8195-4897-B36E-B4915E488C80}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A0E4AAFD-2EA7-4817-B9D3-FFF98626F267}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0E4AAFD-2EA7-4817-B9D3-FFF98626F267}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0E4AAFD-2EA7-4817-B9D3-FFF98626F267}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0E4AAFD-2EA7-4817-B9D3-FFF98626F267}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4C1C271-8195-4897-B36E-B4915E488C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4C1C271-8195-4897-B36E-B4915E488C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4C1C271-8195-4897-B36E-B4915E488C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4C1C271-8195-4897-B36E-B4915E488C80}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
