@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BirthdayGreetingsKata
+namespace BirthdayGreetingsKata.ConsoleApp
 {
     class Program
     {
