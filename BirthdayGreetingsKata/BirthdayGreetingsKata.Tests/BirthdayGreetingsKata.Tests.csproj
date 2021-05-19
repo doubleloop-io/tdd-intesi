@@ -7,22 +7,22 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1"/>
-        <PackageReference Include="netDumbster" Version="2.0.0.8"/>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.7.1" />
+        <PackageReference Include="netDumbster" Version="2.0.0.8" />
 
-        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7"/>
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.6"/>
+        <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
+        <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="5.0.6" />
 
-        <PackageReference Include="DotNet.Testcontainers" Version="1.4.0"/>
+        <PackageReference Include="DotNet.Testcontainers" Version="1.4.0" />
 
-        <PackageReference Include="System.Data.SqlClient" Version="4.8.2"/>
-        <PackageReference Include="Dapper" Version="2.0.90"/>
+        <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
+        <PackageReference Include="Dapper" Version="2.0.90" />
 
-        <PackageReference Include="FluentMigrator" Version="3.2.15"/>
-        <PackageReference Include="FluentMigrator.Runner" Version="3.2.15"/>
-        <PackageReference Include="FluentMigrator.Runner.SqlServer" Version="3.2.15"/>
+        <PackageReference Include="FluentMigrator" Version="3.2.15" />
+        <PackageReference Include="FluentMigrator.Runner" Version="3.2.15" />
+        <PackageReference Include="FluentMigrator.Runner.SqlServer" Version="3.2.15" />
 
-        <PackageReference Include="xunit" Version="2.4.1"/>
+        <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -34,10 +34,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\BirthdayGreetingsKata.ConsoleApp\BirthdayGreetingsKata.ConsoleApp.csproj"/>
-        <ProjectReference Include="..\BirthdayGreetingsKata.WebApp\BirthdayGreetingsKata.WebApp.csproj"/>
-        <ProjectReference Include="..\BirthdayGreetingsKata.Infrastructure\BirthdayGreetingsKata.Infrastructure.csproj"/>
-        <ProjectReference Include="..\BirthdayGreetingsKata\BirthdayGreetingsKata.csproj"/>
+        <ProjectReference Include="..\BirthdayGreetingsKata.ConsoleApp\BirthdayGreetingsKata.ConsoleApp.csproj" />
+        <ProjectReference Include="..\BirthdayGreetingsKata.WebApp\BirthdayGreetingsKata.WebApp.csproj" />
+        <ProjectReference Include="..\BirthdayGreetingsKata.Infrastructure\BirthdayGreetingsKata.Infrastructure.csproj" />
+        <ProjectReference Include="..\BirthdayGreetingsKata\BirthdayGreetingsKata.csproj" />
     </ItemGroup>
 
 </Project>
