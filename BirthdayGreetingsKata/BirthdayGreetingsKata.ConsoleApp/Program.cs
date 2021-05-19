@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Net;
+using System.Threading.Tasks;
 using BirthdayGreetingsKata.Infrastructure;
-using Microsoft.Extensions.Configuration;
 
 namespace BirthdayGreetingsKata.ConsoleApp
 {
-    class Program
+    public class Program
     {
-        static void Main(string[] args)
+        public static async Task Main(string[] args)
         {
-            var configuration = BuildConfiguration();
-
             var repo = new CsvEmployeeRepository(args[0]);
             var notification = new SmtpGreetingsNotification(IPAddress.Parse(args[1]), int.Parse(args[2]), args[3]);
+            var service = new BirthdayService(repo, notification);
 
-            Console.WriteLine("Hello World!");
+            var today = DateTime.Today;
+            if (args.Length == 5)
+                today = args[4].ToDate();
+
+            await service.SendGreetings(today);
         }
-
-        static IConfiguration BuildConfiguration() =>
-            new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddEnvironmentVariables()
-                .Build();
     }
 }
