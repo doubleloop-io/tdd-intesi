@@ -5,7 +5,7 @@ using Dapper;
 
 namespace BirthdayGreetingsKata.Infrastructure
 {
-    public class MsSqlEmployeeRepository
+    public class MsSqlEmployeeRepository : IEmployeeRepository
     {
         readonly string databaseConnectionString;
 

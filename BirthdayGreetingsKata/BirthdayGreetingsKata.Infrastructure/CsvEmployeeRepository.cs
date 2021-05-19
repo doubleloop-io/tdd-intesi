@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BirthdayGreetingsKata.Infrastructure
 {
-    public class CsvEmployeeRepository
+    public class CsvEmployeeRepository : IEmployeeRepository
     {
         readonly string file;
 

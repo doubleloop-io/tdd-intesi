@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace BirthdayGreetingsKata.Infrastructure
 {
-    public class SmtpGreetingsNotification : IDisposable
+    public class SmtpGreetingsNotification : IDisposable, IGreetingsNotification
     {
         readonly IPAddress address;
         readonly int port;
