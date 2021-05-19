@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace BirthdayGreetingsKata.Infrastructure
 {
@@ -13,22 +14,26 @@ namespace BirthdayGreetingsKata.Infrastructure
             this.file = file;
         }
 
-        public IEnumerable<Employee> Load() =>
+        public Task<IEnumerable<Employee>> Load() =>
             File.Exists(file) ? ParseFile() : NoFile();
 
-        static IEnumerable<Employee> NoFile() =>
-            Enumerable.Empty<Employee>();
+        static Task<IEnumerable<Employee>> NoFile() =>
+            Task.FromResult(Enumerable.Empty<Employee>());
 
-        IEnumerable<Employee> ParseFile() =>
-            File.ReadAllLines(file)
+        async Task<IEnumerable<Employee>> ParseFile()
+        {
+            var lines = await File.ReadAllLinesAsync(file);
+            return lines
                 .Skip(1)
                 .Select(ParseEmployee);
+        }
 
         static Employee ParseEmployee(string single)
         {
             var parts = single.Split(new[] {','})
                 .Select(x => x.Trim())
                 .ToArray();
+
             return new Employee
             {
                 LastName = parts[0],

@@ -1,7 +1,6 @@
-using System;
-using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using BirthdayGreetingsKata.Infrastructure;
 using Xunit;
 
@@ -9,11 +8,11 @@ namespace BirthdayGreetingsKata.Tests
 {
     /*
      * TEST LIST:
-     * - file w/ 1 employee
-     * - file w/out employees
-     * - file w/ many employees
+     * x file w/ 1 employee
+     * x file w/out employees
+     * x file w/ many employees
      * - missing columns
-     * - missing file
+     * x missing file
      * - dati errati (data nascita nel futuro)
      * - dati malformattati
      * - potrebbero essere piu' file?
@@ -22,12 +21,12 @@ namespace BirthdayGreetingsKata.Tests
     public class CsvEmployeeRepositoryTests
     {
         [Fact]
-        public void LoadOneEmployee()
+        public async Task LoadOneEmployee()
         {
             // SETUP/CLEANUP EXTERNAL RESOURCE
             // creare un file
             var file = nameof(LoadOneEmployee);
-            File.WriteAllLines(
+            await File.WriteAllLinesAsync(
                 file,
                 new[]
                 {
@@ -40,7 +39,7 @@ namespace BirthdayGreetingsKata.Tests
             // passare il path del file al repository
             var repo = new CsvEmployeeRepository(file);
 
-            var result = repo.Load();
+            var result = await repo.Load();
 
             var employee = Assert.Single(result);
             Assert.Equal("foo", employee.LastName);
@@ -51,7 +50,7 @@ namespace BirthdayGreetingsKata.Tests
         }
 
         [Fact]
-        public void LoadManyEmployees()
+        public async Task LoadManyEmployees()
         {
             var file = nameof(LoadManyEmployees);
             File.WriteAllLines(
@@ -65,13 +64,13 @@ namespace BirthdayGreetingsKata.Tests
             );
             var repo = new CsvEmployeeRepository(file);
 
-            var result = repo.Load();
+            var result = await repo.Load();
 
             Assert.Equal(2, result.Count());
         }
 
         [Fact]
-        public void NoEmployees()
+        public async Task NoEmployees()
         {
             var file = nameof(LoadManyEmployees);
             File.WriteAllLines(
@@ -83,18 +82,18 @@ namespace BirthdayGreetingsKata.Tests
             );
             var repo = new CsvEmployeeRepository(file);
 
-            var result = repo.Load();
+            var result = await repo.Load();
 
             Assert.Empty(result);
         }
 
         [Fact]
-        public void MissingFile()
+        public async Task MissingFile()
         {
             var file = nameof(MissingFile);
             var repo = new CsvEmployeeRepository(file);
 
-            var result = repo.Load();
+            var result = await repo.Load();
 
             Assert.Empty(result);
         }
