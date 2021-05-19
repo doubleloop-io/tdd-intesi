@@ -20,6 +20,9 @@ namespace BirthdayGreetingsKata.Tests
             // SETUP/CLEANUP
             // start/connect+clear server smtp
             using var server = SimpleSmtpServer.Start(5000);
+            // CLIENT <- protocollo -> SERVER
+            // CLIENT <- protocollo -> MOCK-SERVER-PLC
+            // ehy server, se ti arriva request(...) allora resp(OK)
             using var notification = new SmtpGreetingsNotification(server.Configuration.IPAddress, server.Configuration.Port, "foo@bar.com");
 
             await notification.SendForBirthday(
